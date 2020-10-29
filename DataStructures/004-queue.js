@@ -34,8 +34,10 @@ function buscaFila(fila, elemento){
     let bufferArray = fila.getBuffer()
     let bufferFila = new Fila(bufferArray)
     while(!bufferFila.vazia()){
-        return (bufferFila.desenfileirar() == elemento ? true : false)            
+        if (bufferFila.desenfileirar() === elemento)
+            return true
     }
+    return false
 }
 
 // instancia
@@ -48,4 +50,4 @@ fila.enfileirar(5)
 
 fila.printar()
 
-console.log(buscaFila(fila, 14));
+console.log(buscaFila(fila, 4));
